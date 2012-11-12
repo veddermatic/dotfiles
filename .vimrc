@@ -36,6 +36,9 @@ set smartindent " ... unless we did a brace or something, then indent even more!
 set scrolloff=5 " always show a few lines under the one we are working on for context!
 set hid "change buffer w/o annoying for save
 set shortmess=aOstTI "removes many ENTER TO CONTINUE messages
+
+set wrap " soft wrap text
+set linebreak " rules for breaking lines
 " }}}
 
 " Folding --- {{{
