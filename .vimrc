@@ -109,6 +109,8 @@ inoremap <up> <nop>
 autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
 " comment out line (python)
 autocmd FileType python     nnoremap <buffer> <localleader>c I#<esc>
+" comment out line (css)
+autocmd FileType css nnoremap <buffer> <localleader>c I/*<esc>A*/<esc>
 " shortcut for "(i)nside (n)ext set of (p)arenthesis
 onoremap inp :<c-u>normal! f(vi(<cr>
 " shortcut for "(i)nside (l)ast set of (p)arenthesis
