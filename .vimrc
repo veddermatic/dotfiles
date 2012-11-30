@@ -107,10 +107,13 @@ inoremap <up> <nop>
 " Programming shortcuts --- {{{
 " comment out line (js)
 autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
+autocmd FileType javascript nnoremap <buffer> <localleader>uc ^xx 
 " comment out line (python)
 autocmd FileType python     nnoremap <buffer> <localleader>c I#<esc>
+autocmd FileType python     nnoremap <buffer> <localleader>uc ^x 
 " comment out line (css)
 autocmd FileType css nnoremap <buffer> <localleader>c I/*<esc>A*/<esc>
+autocmd FileType css nnoremap <buffer> <localleader>c ^xx$xx
 " shortcut for "(i)nside (n)ext set of (p)arenthesis
 onoremap inp :<c-u>normal! f(vi(<cr>
 " shortcut for "(i)nside (l)ast set of (p)arenthesis
