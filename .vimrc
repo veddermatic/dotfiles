@@ -151,7 +151,7 @@ let g:NERDTreeWinSize = 50
 let g:NERDTreeChDirMode = 2
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeIgnore = ['^\._','\.swp$', '\.git$', '\.svn$', '\.jpg$', '\.gif$', '\.png$', '\.pyc', '\.DS_Store', '\.hg', '\.git']
-let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeQuitOnOpen = 0
 let g:NERDTreeShowBookmarks = 1
 let g:NERDTreeSortOrder = ['\/$', '*']
 " }}}
