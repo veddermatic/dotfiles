@@ -10,6 +10,7 @@ syntax enable
 let mapleader = ","
 let maplocalleader = "\\"
 set number
+" set cursorline " highlights the active ine (but removes syntax)
 set numberwidth=5
 set statusline=%f\ -\ %y%=col:%3c\ row:%4l:%-4L
 set laststatus=2 " always show the status line
@@ -45,8 +46,8 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " Folding --- {{{
 set foldmethod=indent " Fold by indent level by default
 set nofoldenable " Don't fold code by default
-set foldnestmax=3 " only fold two levels deep. (personal preference)
-set foldlevel=1
+"set foldnestmax=3 " only fold two levels deep. (personal preference)
+set foldlevel=99
 " }}}
 
 " VIM Command shortcuts / remapping {{{
@@ -113,7 +114,9 @@ autocmd FileType python     nnoremap <buffer> <localleader>c I#<esc>
 autocmd FileType python     nnoremap <buffer> <localleader>uc ^x 
 " comment out line (css)
 autocmd FileType css nnoremap <buffer> <localleader>c I/*<esc>A*/<esc>
-autocmd FileType css nnoremap <buffer> <localleader>c ^xx$xx
+autocmd FileType css nnoremap <buffer> <localleader>uc ^xx$xx
+" add block stying to all images
+autocmd FileType html nnoremap <localleader>ebs gg7ddG2k3dd/Table<cr>diW:%s/\(<a.*\)\n\s\+/\1/g<bar>%s/\(<td.*\)\n\s\+/\1/g<bar>%s/<td\(.*\)\( width="\d\+" height="\d\+"\)/<td\2\1\2/g<bar>%s/src=/style="display:block;" src=/g<cr>
 " shortcut for "(i)nside (n)ext set of (p)arenthesis
 onoremap inp :<c-u>normal! f(vi(<cr>
 " shortcut for "(i)nside (l)ast set of (p)arenthesis
@@ -151,7 +154,7 @@ let g:NERDTreeWinSize = 50
 let g:NERDTreeChDirMode = 2
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeIgnore = ['^\._','\.swp$', '\.git$', '\.svn$', '\.jpg$', '\.gif$', '\.png$', '\.pyc', '\.DS_Store', '\.hg', '\.git']
-let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeQuitOnOpen = 0
 let g:NERDTreeShowBookmarks = 1
 let g:NERDTreeSortOrder = ['\/$', '*']
 " }}}
