@@ -162,6 +162,9 @@ let g:NERDTreeSortOrder = ['\/$', '*']
 nnoremap <localleader>be <c-w>k
 " }}}
 
+" ---- Compile LESS to CSS
+nnoremap <localleader>less :w <BAR> !lessc % > %:t:r.css<CR><space>
+
 " ---- make things pretty {{{
 colorscheme freya
 " }}}
