@@ -1,0 +1,22 @@
+snippet newdoc
+	<!doctype html>
+	<html>
+	<head>
+		<title>${1}</title>
+	</head>
+	<body lang="en">
+		${2}
+	</body>
+	</html>
+snippet djb
+	{% block ${1} %}
+		${2}
+	{% endblock %}
+snippet djif
+	{% if ${1} %}
+		${2}
+	{% endif %}
+snippet djfor
+	{% for ${1} in ${2} %}
+		${3}
+	{% endfor %}
