@@ -116,7 +116,7 @@ autocmd FileType python     nnoremap <buffer> <localleader>uc ^x
 autocmd FileType css nnoremap <buffer> <localleader>c I/*<esc>A*/<esc>
 autocmd FileType css nnoremap <buffer> <localleader>uc ^xx$xx
 " add block stying to all images
-autocmd FileType html nnoremap <localleader>ebs gg7ddG2k3dd/Table<cr>diW:%s/\(<a.*\)\n\s\+/\1/g<bar>%s/\(<td.*\)\n\s\+/\1/g<bar>%s/<td\(.*\)\( width="\d\+" height="\d\+"\)/<td\2\1\2/g<bar>%s/src=/style="display:block;" src=/g<cr>
+autocmd FileType html nnoremap <localleader>ebs gg7ddG2k3dd/Table<cr>diW:%s/\(<td.*\)\n\s\+/\1/g<cr>:%s/<td\(.*\)\( width="\d\+" height="\d\+"\)/<td\2\1\2/g<cr>:%s/src=/style="display:block;" src=/g<cr>:%s/\(<a.*\)\n\s\+/\1/g<cr>
 " shortcut for "(i)nside (n)ext set of (p)arenthesis
 onoremap inp :<c-u>normal! f(vi(<cr>
 " shortcut for "(i)nside (l)ast set of (p)arenthesis
