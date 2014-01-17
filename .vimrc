@@ -58,6 +58,8 @@ noremap <leader>1 :bprev<cr>
 noremap <leader>2 :bnext<cr> 
 " close current buffer but leave others open
 noremap <leader>4 :Bclose<cr>
+" set nohl
+noremap <leader>nh :nohl<cr>
 " }}}
 
 " Manipulate lines --- {{{
@@ -128,6 +130,9 @@ iabbrev teh the
 iabbrev fuction function
 iabbrev fucntion function
 iabbrev stauts status
+iabbrev ncrv NEEDS CODE REVIEW
+autocmd FileType python     :iabbrev <buffer> ncrv # NEEDS CODE REVIEW
+autocmd FileType javascript :iabbrev <buffer> ncrv // NEEDS CODE REVIEW
 " }}}
 
 " Vimscript file settings ---- {{{
@@ -144,6 +149,8 @@ augroup END
 nnoremap <localleader>se :Errors<cr>
 " check syntax
 nnoremap <localleader>sc :SyntasticCheck<cr>
+let g:syntastic_check_on_open=1
+let g:syntastic_python_checker="flake8"
 " }}}
 
 " ---- NERD TREE {{{ 

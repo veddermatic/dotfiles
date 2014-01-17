@@ -16,5 +16,5 @@ set colorcolumn=80
 set columns=120
 set lines=42
 "color molokai
-"color jellybeans
-color sashaDark
+color jellybeans
+"color sashaDark
