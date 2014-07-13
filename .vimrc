@@ -50,6 +50,10 @@ set nofoldenable " Don't fold code by default
 set foldlevel=99
 " }}}
 
+" File Types --- {{{
+au BufRead,BufNewFile *.jsx set filetype=javascript
+" }}}
+
 " VIM Command shortcuts / remapping {{{
 command! W w " because I always type 'W' to save by accident
 " switch to previous buffer
