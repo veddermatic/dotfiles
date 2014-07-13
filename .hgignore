@@ -5,3 +5,6 @@ git
 *.swp
 .DS_Store
 .netrwhist
+.pyc
+.sass-cache
+node_modules
