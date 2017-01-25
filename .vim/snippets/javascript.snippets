@@ -1,16 +1,121 @@
+snippet log
+	console.log(${1});
+snippet error
+	console.error(${1});
+snippet info
+	console.info(${1});
+snippet logs
+	console.log("${1}");
+snippet errors
+	console.error("${1}");
+snippet infos
+	console.info("${1}");
+snippet prom
+	var promise = new Promise((resolve, reject) => {
+		${1}
+	});
+	return promise;
 snippet rcc
-	var ${1} = React.createClass({
-		render: function () {
-			return (
-				${2}
-			);
+	import React, { PropTypes } from 'react';
+	const ${1:className} = ({
+		${2:prop}
+	}) => (
+		<div></div>
+	);
+	${3:$1}.propTypes = {
+		${4:$2}: PropTypes.${5}
+	};
+	export default  ${6:$1};
+snippet rc6
+	import React from 'react'
+	class ${1:className} extends React.Component {
+
+		constructor () {
+			super()
 		}
+
+		render () {
+			return (
+				${2:<div></div>}
+			)
+		}
+	}
+	${3:$1}.propTypes = {
+	}
+	export default ${4:$1}
+snippet reduxcon
+	import { connect } from 'react-redux';
+	import ${1:componentName} from '../components/${2:$1}';
+	// import actions to dispatch!
+	const mapStateToProps = (state) => ({
+	});
+	const mapDispatchToProps = (dispatch) => ({
+	});
+	const Connected${3:$1} = connect(mapStateToProps, mapDispatchToProps)(${4:$1});
+	export default Connected${5:$3};
+
+snippet reduck
+	const ${1:ACTION_TYPES} = {
+		    ${2:ACTION_NAME}: '${3:$2}',
+	};
+
+	const initialState = {
+	};
+
+	export default = (state = initialState, action) => {
+		switch(action.type) {
+			default:
+				return state;
+		}
+	};
+
+	export ${4:actionName} = () => ({
+		    type: ${5:$1}.${6:$2},
+	});
+snippet actiont
+	${1:name}: '${2:$1}',
+snippet action
+	export ${1:actionName} = (${2}) => ({
+		type: ${3:TYPE.NAME},
+	});
+snippet thunk
+	export ${1:actionName} = (${2}) => ({
+		return (dispatch, getState) => ({
+		});
 	});
 snippet rcwm
 	componentWillMount: function() {
 		${1}
 	},
-snippet rprops
-	this.props.${1}
-snippet rstate
-	this.state.${1}
+snippet rgdp
+	getDefaultProps: function () {
+		return {
+			${1:key}: ${2:val}
+		};
+	},
+snippet rgis
+	getInitialState: function () {
+		return {
+			${1:key}: ${2:val}
+		};
+	},
+snippet rss
+	this.setState({
+		${1:key}: ${2:val}
+	});
+snippet rcdm
+	componentDidMount: function () {
+		${1}
+	},
+snippet rcwu
+	componentWillUnmount: function () {
+		${1}
+	},
+snippet rmeth
+	${1:methodName}: function (${2:params}) {
+		${3:code}
+	},
+snippet jtest
+	it('${1:description}', () => {
+		${2:code}
+	});

@@ -39,6 +39,7 @@ set hid "change buffer w/o annoying for save
 set shortmess=aOstTI "removes many ENTER TO CONTINUE messages
 set wrap " soft wrap text
 set linebreak " rules for breaking lines
+set iskeyword+=- " add matching across dashes so CSS sucks less with ctrl-p
 " turn off auto commenting!!!
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " }}}
@@ -145,6 +146,10 @@ augroup filetype_vim
     autocmd FileType vim setlocal foldmethod=marker
 augroup END
 " }}}
+
+" Show what highlight / color scheme is under the cursor {{{
+map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
+" }}}
 "
 " PLUGINS
 "
@@ -154,7 +159,8 @@ nnoremap <localleader>se :Errors<cr>
 " check syntax
 nnoremap <localleader>sc :SyntasticCheck<cr>
 let g:syntastic_check_on_open=1
-let g:syntastic_python_checker="flake8"
+let g:syntastic_python_checkers=["flake8", "pylint"]
+let g:syntastic_javascript_checkers=["eslint", "jsxhint"]
 " }}}
 
 " ---- NERD TREE {{{ 
@@ -165,9 +171,14 @@ let g:NERDTreeWinSize = 50
 let g:NERDTreeChDirMode = 2
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeIgnore = ['^\._','\.swp$', '\.git$', '\.svn$', '\.jpg$', '\.gif$', '\.png$', '\.pyc', '\.DS_Store', '\.hg', '\.git']
-let g:NERDTreeQuitOnOpen = 0
+let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeShowBookmarks = 1
 let g:NERDTreeSortOrder = ['\/$', '*']
+" }}}
+
+" ---- CTRLP {{{
+map <leader>b :CtrlPBuffer
+let g:ctrlp_custom_ignore = {'dir': '\v[\/](\.git|node_modules|\.sass-cache|dist)$' }
 " }}}
 
 "---- MINIBUFEXPL {{{
@@ -180,5 +191,5 @@ nnoremap <localleader>be <c-w>k
 nnoremap <localleader>less :w <BAR> !lessc % > %:t:r.css<CR><space>
 
 " ---- make things pretty {{{
-colorscheme freya
+colorscheme nets-away
 " }}}
