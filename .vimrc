@@ -162,6 +162,11 @@ let g:syntastic_check_on_open=1
 let g:syntastic_python_checkers=["flake8", "pylint"]
 let g:syntastic_javascript_checkers=["eslint", "jsxhint"]
 " }}}
+augroup WrapLineInMarkdown
+    autocmd!
+    autocmd FileType makrdown setlocal wrap
+augroup END
+
 
 " ---- NERD TREE {{{ 
 nnoremap <leader>6 :NERDTreeToggle<cr>
