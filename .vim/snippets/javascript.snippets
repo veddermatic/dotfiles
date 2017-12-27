@@ -16,22 +16,29 @@ snippet prom
 	});
 	return promise;
 snippet rcc
-	import React, { PropTypes } from 'react';
+	import React from 'react';
+	import PropTypes from 'prop-types';
+
+	import './style.css';
+
 	const ${1:className} = ({
 		${2:prop}
 	}) => (
 		<div></div>
 	);
 	${3:$1}.propTypes = {
-		${4:$2}: PropTypes.${5}
 	};
-	export default  ${6:$1};
+	export default  ${4:$1};
 snippet rc6
 	import React from 'react'
+	import PropTypes from 'prop-types';
+
 	class ${1:className} extends React.Component {
 
-		constructor () {
-			super()
+		constructor (props) {
+			super(props)
+			this.state = {
+			}
 		}
 
 		render () {
@@ -43,16 +50,14 @@ snippet rc6
 	${3:$1}.propTypes = {
 	}
 	export default ${4:$1}
+
 snippet reduxcon
 	import { connect } from 'react-redux';
-	import ${1:componentName} from '../components/${2:$1}';
-	// import actions to dispatch!
-	const mapStateToProps = (state) => ({
+	const mapStateToProps = ( state ) => ({
 	});
-	const mapDispatchToProps = (dispatch) => ({
+	const mapDispatchToProps = ( dispatch ) => ({
 	});
-	const Connected${3:$1} = connect(mapStateToProps, mapDispatchToProps)(${4:$1});
-	export default Connected${5:$3};
+	//	export default connect( mapStateToProps, mapDispatchToProps )( ${1:name} );
 
 snippet reduck
 	const ${1:ACTION_TYPES} = {
@@ -62,60 +67,75 @@ snippet reduck
 	const initialState = {
 	};
 
-	export default = (state = initialState, action) => {
-		switch(action.type) {
+	export default ( state = initialState, action = null ) => {
+		if ( !action ) {
+			state;
+		}
+		switch( action.type ) {
 			default:
 				return state;
 		}
 	};
 
-	export ${4:actionName} = () => ({
+	export const ${4:actionName} = () => ({
 		    type: ${5:$1}.${6:$2},
 	});
 snippet actiont
 	${1:name}: '${2:$1}',
 snippet action
-	export ${1:actionName} = (${2}) => ({
+	export const ${1:actionName} = ( ${2:data} ) => ({
 		type: ${3:TYPE.NAME},
 	});
 snippet thunk
-	export ${1:actionName} = (${2}) => ({
-		return (dispatch, getState) => ({
+	export const ${1:actionName} = ( ${2} ) => {
+		return ( dispatch, getState ) => ({
 		});
-	});
+	};
 snippet rcwm
-	componentWillMount: function() {
+	componentWillMount() {
 		${1}
-	},
-snippet rgdp
-	getDefaultProps: function () {
-		return {
-			${1:key}: ${2:val}
-		};
-	},
-snippet rgis
-	getInitialState: function () {
-		return {
-			${1:key}: ${2:val}
-		};
-	},
+	}
 snippet rss
 	this.setState({
 		${1:key}: ${2:val}
 	});
 snippet rcdm
-	componentDidMount: function () {
+	componentDidMount() {
 		${1}
-	},
+	}
 snippet rcwu
-	componentWillUnmount: function () {
+	componentWillUnmount() {
 		${1}
-	},
+	}
 snippet rmeth
-	${1:methodName}: function (${2:params}) {
+	${1:methodName}( ${2:params} ) {
 		${3:code}
-	},
+	}
+	this.${4:$1} = this.{$5:$1}.bind( this )
+snippet reactest
+	import React from 'react';
+	import ReactDOM from 'react-dom';
+	import { shallow, mount } from 'enzyme';
+	import ${1:component} from './index';
+
+	it('renders without crashing', () => {
+		    const _d = document.createElement('div');
+			ReactDOM.render(<${2:$1} />, _d);
+	});
+snippet jdesc
+	describe( '${1:description}', () => {
+		it( '${2:description}', () => {
+			${3:code}
+		});
+	});
 snippet jtest
-	it('${1:description}', () => {
+	it( '${1:description}', () => {
 		${2:code}
+	});
+snippet jrtest
+	it( '${1:description}', () => {
+		const _initial = { ${2:state} };
+		const _action = ${3:action};
+		const _r = reducer( _initial, _action );
+		expect( _r.${4:code} ).toBe( ${5:result} );
 	});

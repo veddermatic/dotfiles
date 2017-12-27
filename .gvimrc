@@ -4,7 +4,7 @@ if has("gui_macvim")
     " tab shorcuts
     noremap <M-S-[> :tabp<CR>
     noremap <M-S-]> :tabn<CR>
-    set transp=5
+    set transp=0
 endif
 
 " Disable toolbar on MacVim / gVim

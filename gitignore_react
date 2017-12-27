@@ -1,0 +1,8 @@
+.idea
+test.html
+node_modules
+*.swp
+npm-debug.log
+dist
+.sass-cache
+img

@@ -34,7 +34,7 @@ if version > 580
                         hi SpecialComment guifg=#BD9800 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
                         hi Typedef guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=60 ctermbg=NONE cterm=bold
                         hi Title guifg=NONE guibg=#262626 guisp=#262626 gui=bold ctermfg=NONE ctermbg=235 cterm=bold
-                        hi Folded guifg=#192224 guibg=#A1A6A8 guisp=#A1A6A8 gui=italic ctermfg=235 ctermbg=248 cterm=NONE
+                        hi Folded guifg=#636363 guibg=#000000 guisp=#000000 gui=NONE ctermfg=248 ctermbg=NONE cterm=NONE
                         hi PreCondit guifg=#ffffff guibg=NONE guisp=NONE gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
                         hi Include guifg=#BD9800 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
                         hi TabLineSel guifg=#192224 guibg=#a3a29d guisp=#a3a29d gui=bold ctermfg=235 ctermbg=248 cterm=bold
