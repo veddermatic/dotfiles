@@ -32,7 +32,7 @@ hi StatusLineNC	    guibg=#2e2e2e    ctermbg=237    guifg=#666666    ctermfg=242
 hi String	    guifg=#c29bb2    ctermfg=07    gui=none    cterm=none 
 hi StorageClass	    guifg=#bdb76b    ctermfg=250    gui=none    cterm=none 
 hi Title	    guifg=#a68a8a    ctermfg=248    gui=bold    cterm=bold 
-hi Todo	    guifg=#fffefc    ctermfg=226    gui=none    cterm=none 
+hi Todo	    guifg=#ffaf00    ctermfg=214    guibg=#404040  ctermbg=237    gui=none    cterm=none 
 hi Type	    guifg=#bdb7a8    ctermfg=250    gui=none    cterm=none 
 hi Underlined	    guifg=#93a0c7    ctermfg=245    gui=underline    cterm=underline 
 hi VertSplit	    guibg=#2b2b2b    ctermbg=237    guifg=#858585    ctermfg=89    gui=none    cterm=none 
